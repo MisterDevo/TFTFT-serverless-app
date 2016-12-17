@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="stylesheets/main.css">
+  </head>
+  <body>
+    <div id="wrapper" ng-controller="globalController">
+      <nav role="navigation" style="margin-bottom: 0" class="navbar navbar-default navbar-fixed-top">
+        <div class="navbar-header">
+          <button type="button" ng-init="sideCollapsed = true" ng-click="sideCollapsed = !sideCollapsed" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="/#/" class="navbar-brand">
+            <div class="logo"></div></a>
+        </div>
+        <ul uib-collapse="sideCollapsed" class="nav navbar-top-links navbar-right navbar-collapse collapse">
+          <li><a href="/#login"> Login</a></li>
+        </ul>
+        <div role="navigation" class="navbar-default sidebar">
+          <div uib-collapse="sideCollapsed" class="sidebar-nav navbar-collapse collapse">
+            <ul id="side-menu" class="nav">
+              <li><a id="first-link" href ng-init="submenuCollapsed = true" ng-click="submenuCollapsed = !submenuCollapsed"><i class="glyphicon glyphicon-link"></i> First Link (collapsed)</a>
+                <ul uib-collapse="submenuCollapsed" class="nav nav-second-level">
+                  <li><a id="first-sub-link" href="#first-sub"><i class="glyphicon glyphicon-link"></i> First Sub Link</a></li>
+                  <li><a id="second-sub-link" href="#second-sub"><i class="glyphicon glyphicon-link"></i> Second Sub Link</a></li>
+                </ul>
+              </li>
+              <li><a id="second-link" href="#second"><i class="glyphicon glyphicon-link"></i> Second Link</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <nav class="navbar navbar-default navbar-fixed-bottom">
+        <ul class="nav navbar-top-links navbar-right">
+          <li><a href="https://github.com/MisterDevo/TFTFT-Scaf/releases"></a></li>
+          <li><a href="https://github.com/MisterDevo/TFTFT-Scaf"><i class="fa fa-github-alt"></i></a></li>
+        </ul>
+      </nav>
+    </div>
+    <div id="page-wrapper">
+      <div class="row">
+        <div ng-view=""></div>
+      </div>
+    </div>
+<script data-main="javascripts/main" src="components/requirejs/require.js"></script>
+</body>
+</html>
